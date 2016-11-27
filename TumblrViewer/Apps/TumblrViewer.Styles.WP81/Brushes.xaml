@@ -1,0 +1,32 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!-- kolory -->
+
+    <!-- tekst -->
+    <Color x:Key="DefaultForegroundColor">#FFFFFFFE</Color>
+    <!-- tło -->
+    <Color x:Key="DefaultBackgroundColor">#FF000001</Color>
+    <Color x:Key="DefaultButtonBackgroundColor">#33AAAAAA</Color>
+    <!-- motyw przewodni - czerwony, fioletowy czy jakiś -->
+    <Color x:Key="DefaultAccentColor">#FFAAAAFF</Color>
+
+
+    
+    
+    <!-- pędzle -->
+    <SolidColorBrush x:Key="DefaultForegroundBrush" Color="{StaticResource DefaultForegroundColor}" />
+    <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="{StaticResource DefaultBackgroundColor}" />
+    <SolidColorBrush x:Key="DefaultButtonBackgroundBrush" Color="{StaticResource DefaultButtonBackgroundColor}" />
+    <SolidColorBrush x:Key="DefaultAccentBrush" Color="{StaticResource DefaultAccentColor}" />
+
+
+    <!-- overrided theme brushes-->
+    <SolidColorBrush x:Key="TextBoxFocusedBackgroundThemeBrush" Color="{StaticResource DefaultBackgroundColor}" />
+    <SolidColorBrush x:Key="TextBoxFocusedForegroundThemeBrush" Color="{StaticResource DefaultForegroundColor}" />
+    <SolidColorBrush x:Key="TextBoxFocusedBorderThemeBrush" Color="{StaticResource DefaultForegroundColor}" />
+    <SolidColorBrush x:Key="ProgressBarIndeterminateForegroundThemeBrush" Color="{StaticResource DefaultAccentColor}" />
+    
+</ResourceDictionary>

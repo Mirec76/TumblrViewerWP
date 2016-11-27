@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB3EFC60-1BD8-473A-BA73-F5949D4D5696}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TumblrViewer.ViewModels</RootNamespace>
+    <AssemblyName>TumblrViewer.ViewModels</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile32</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <TargetPlatform Include="Windows, Version=8.1" />
+    <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Items\LoadNextListItemViewModel.cs" />
+    <Compile Include="Items\PostItemViewModel.cs" />
+    <Compile Include="Items\PostItemVMFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MainViewModel.cs" />
+    <Compile Include="Views\WebViewModel.cs" />
+    <Compile Include="Views\LoginViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Engine\TinyMvvm\TinyMvvm.csproj">
+      <Project>{e66c1484-604a-49b4-8794-1ff7b821618a}</Project>
+      <Name>TinyMvvm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Engine\Tumblr.Common\Tumblr.Common.csproj">
+      <Project>{485060f8-9bfc-4e9c-a0fc-28e719fed60f}</Project>
+      <Name>Tumblr.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Engine\Tumblr.Contracts\Tumblr.Contracts.csproj">
+      <Project>{0d540832-af38-4021-b259-5a15c5d9eae3}</Project>
+      <Name>Tumblr.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Engine\Tumblr.Model\Tumblr.Model.csproj">
+      <Project>{ac66e63c-14c0-435c-bae9-b789391e02f9}</Project>
+      <Name>Tumblr.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

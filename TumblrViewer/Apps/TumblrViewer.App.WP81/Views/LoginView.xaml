@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="TumblrViewer.App.WP81.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TumblrViewer.App.WP81.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource DefaultBackgroundBrush}"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{StaticResource AppNameLabelHeightNormal}"/>
+            <RowDefinition Height="{StaticResource PageTopMarginNormal}"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{StaticResource PageLeftMarginNormal}"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{StaticResource PageRightMarginNormal}"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <StackPanel>
+                <TextBlock x:Uid="AppName" 
+                       Style="{StaticResource AppNameLabelStyle}"/>
+                <TextBlock x:Uid="Author" 
+                       Style="{StaticResource SmallTextStyle}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1"
+              Grid.Row="2"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock x:Uid="LoginView_UserNameLabel" 
+                       Style="{StaticResource LabelStyle}"/>
+                <TextBox Text="{Binding UserName, Mode=TwoWay}"
+                         Style="{StaticResource CustomTextBoxStyle}"
+                         KeyUp="TextBox_KeyUp"
+                         IsEnabled="{Binding InProgress, Converter={StaticResource BoolNegationConverter}}"
+                         />
+                <Button x:Uid="OkButton"
+                        Style="{StaticResource DefaultTextButtonStyle}"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding InProgress, Converter={StaticResource BoolNegationConverter}}"
+                        />
+                <ProgressRing IsActive="{Binding InProgress}"
+                              IsEnabled="{Binding InProgress}"
+                              Background="Transparent"
+                              Foreground="{StaticResource DefaultAccentBrush}"
+                              Margin="{StaticResource DefaultMargin}"
+                              />
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</Page>

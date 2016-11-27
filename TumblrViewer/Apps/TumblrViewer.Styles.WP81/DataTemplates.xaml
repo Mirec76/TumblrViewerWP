@@ -1,0 +1,218 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ts="using:TumblrViewer.Styles.WP81.TemplateSelectors"
+    >
+
+    <DataTemplate x:Key="NotSupportedPostDataTemplate">
+        <Grid Background="{StaticResource DefaultButtonBackgroundBrush}">
+            <Grid Margin="{StaticResource DefaultMargin}"
+                  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/Icons/zakaz.png"/>
+                <TextBlock Grid.Column="2" 
+                           Style="{StaticResource SmallTextStyle}"
+                           VerticalAlignment="Center"
+                           Text="Ten rodzaj postu nie jest obsługiwany przez aplikację"/>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="AudioPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Audio"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ChatPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Chat"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LinkPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Link"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PhotoPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Photo"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="QuotePostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Quote"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TextPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Text"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="VideoPostDataTemplate">
+        <Button Command="{Binding  ShowDetailsCommand}"
+                Background="{StaticResource DefaultButtonBackgroundBrush}"
+                Style="{StaticResource BorderlessButtonStyle}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <Grid Margin="{StaticResource DefaultMargin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Text="Video"/>
+                <TextBlock Style="{StaticResource SmallTextStyle}"
+                           HorizontalAlignment="Right"
+                           Text="{Binding DaysAfterPublication}"/>
+                <TextBlock Style="{StaticResource LabelStyle}"
+                           Grid.Row="1"
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           Text="{Binding Slug}"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LoadNextPostsDataTemplate">
+        <StackPanel HorizontalAlignment="Stretch">
+            <TextBlock Style="{StaticResource SmallTextStyle}"
+                       Margin="{StaticResource DefaultMargin}"
+                       Text="{Binding Label}"/>
+            <ProgressBar IsIndeterminate="True"
+                         Margin="{StaticResource DefaultMargin}"
+                         HorizontalAlignment="Stretch"
+                         Foreground="{StaticResource DefaultAccentBrush}"
+                         />
+        </StackPanel>
+    </DataTemplate>
+
+    <ts:PostTemplateSelector x:Key="PostTemplateSelector"
+                             NotSupportedPostItem="{StaticResource NotSupportedPostDataTemplate}"
+                             AudioPostItem="{StaticResource AudioPostDataTemplate}"
+                             ChatPostItem="{StaticResource ChatPostDataTemplate}"
+                             LinkPostItem="{StaticResource LinkPostDataTemplate}"
+                             PhotoPostItem="{StaticResource PhotoPostDataTemplate}"
+                             QuotePostItem="{StaticResource QuotePostDataTemplate}"
+                             TextPostItem="{StaticResource TextPostDataTemplate}"
+                             VideoPostItem="{StaticResource VideoPostDataTemplate}"
+                             LoadNext="{StaticResource LoadNextPostsDataTemplate}"
+                             />
+
+</ResourceDictionary>

@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="TumblrViewer.App.WP81.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TumblrViewer.App.WP81.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource DefaultBackgroundBrush}"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{StaticResource AppNameLabelHeightNormal}"/>
+            <RowDefinition Height="{StaticResource PageTopMarginNormal}"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{StaticResource PageTopMarginNormal}"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{StaticResource PageLeftMarginNormal}"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{StaticResource PageRightMarginNormal}"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <StackPanel>
+                <TextBlock x:Uid="AppName" 
+                       Style="{StaticResource AppNameLabelStyle}"/>
+                <TextBlock x:Uid="Author" 
+                       Style="{StaticResource SmallTextStyle}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1"
+              Grid.Row="2"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="{Binding UserName}" 
+                           Foreground="{StaticResource DefaultAccentBrush}"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource HeaderStyle}"/>
+                <TextBlock Text="{Binding NumberOfPosts}" 
+                       Style="{StaticResource SmallTextStyle}"/>
+            </StackPanel>
+        </Grid>
+        <ListView ItemTemplateSelector="{StaticResource PostTemplateSelector}"
+                ItemsSource="{Binding Posts}"
+                Grid.Row="4"
+                Grid.Column="1"
+                SelectionMode="None"
+			    ShowsScrollingPlaceholders="False"
+                >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="{StaticResource BottomMargin}" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    <Setter Property="Height" Value="{StaticResource ListItemDefaultHeightNormal}"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                    <ContentThemeTransition />
+                    <ReorderThemeTransition />
+                    <RepositionThemeTransition />
+                    <AddDeleteThemeTransition />
+                </TransitionCollection>
+            </ListView.ItemContainerTransitions>
+        </ListView>
+
+
+    </Grid>
+</Page>

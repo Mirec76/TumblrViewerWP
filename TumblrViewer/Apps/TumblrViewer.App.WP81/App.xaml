@@ -1,0 +1,19 @@
+﻿<Application
+    x:Class="TumblrViewer.App.WP81.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Converters"
+    xmlns:local="using:TumblrViewer.App.WP81">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///TumblrViewer.Styles.WP81/Brushes.xaml"/>
+                <ResourceDictionary Source="ms-appx:///TumblrViewer.Styles.WP81/Values.xaml"/>
+                <ResourceDictionary Source="ms-appx:///TumblrViewer.Styles.WP81/Styles.xaml"/>
+                <ResourceDictionary Source="ms-appx:///TumblrViewer.Styles.WP81/DataTemplates.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converters:BooleanNegationConverter x:Key="BoolNegationConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
